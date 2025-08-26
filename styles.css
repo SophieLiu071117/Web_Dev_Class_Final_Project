@@ -49,6 +49,14 @@
     background-color: rgb(221, 106, 221);
   }
 }
+@keyframes fade-in-opacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 p {
   font-family: Arial, sans-serif;
   font-size: 20px;
@@ -65,9 +73,7 @@ nav {
   transition: border-color 0.3s;
   animation: change-border-color 12s;
 }
-nav:hover {
-  animation: change-border-color 12s infinite;
-}
+
 @keyframes change-border-color {
   14% {
     border-color: red;
@@ -108,17 +114,19 @@ nav li a {
 nav li a button {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  background-color: red; /* initial button color */
-  color: white; /* text color */
+  background-color: red;
+  color: white;
   padding: 8px 16px;
   border: none;
   border-radius: 5px;
   cursor: url("white-and-pink-hand-pointer.svg"), pointer;
-  transition: background-color 0.3s; /* smooth color change on hover */
+  transition: transform 0.3s, box-shadow 0.3s;
   animation: change-bg-color 12s;
 }
-nav:hover li a button {
-  animation: change-bg-color 12s infinite; /* buttons animate when nav hovered */
+
+nav li a button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 .closet {
   font-family: Arial, sans-serif;
@@ -144,6 +152,7 @@ nav:hover li a button {
 }
 img {
   cursor: url("pink-heart.svg"), auto;
+  animation: fade-in-opacity 4s forwards;
 }
 body {
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/101/685/small_2x/watercolor-loose-rose-flower-bouquet-with-gold-line-art-background-free-vector.jpg");
@@ -192,6 +201,8 @@ h2:hover {
 .btn:hover {
   background-color: green;
   color: white;
+  transform: scale(1.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 .text {
   font-family: Lucida Console, monospace;
@@ -202,6 +213,11 @@ h2:hover {
 .image-container {
   float: left;
   margin-right: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 #Aviator-Jacket,
 #Red-T-shirt,
@@ -259,6 +275,36 @@ h2:hover {
   margin: 0 auto;
   text-align: center;
 }
+
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.box {
+  background-color: rgb(170, 229, 170);
+  font-family: Arial, sans-serif;
+  width: 300px;
+  height: 50px;
+}
+.box:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+#total {
+  background-color: rgb(135, 225, 32);
+  font-family: Arial, sans-serif;
+  width: 300px;
+  height: 50px;
+}
+
+#total:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
 table,
 th,
 td {
