@@ -223,16 +223,18 @@ h2:hover {
 #Red-T-shirt,
 #Floral-Dress,
 #Green-Tanktop {
-  height: 520px;
+  min-height: 550px; /* keeps minimum size */
   width: 90%;
+  max-width: 80%;
   background-color: #eee;
   border-style: groove;
   border-radius: 15px;
   padding: 10px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  animation: change-border-color 12s;
+  margin: 0 auto 20px;
+  box-sizing: border-box; /* ensures padding is included */
+  overflow-wrap: break-word; /* forces long words to wrap */
 }
+
 #Aviator-Jacket {
   background-color: lightgray;
   border: 10px groove black;
