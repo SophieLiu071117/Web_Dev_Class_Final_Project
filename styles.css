@@ -233,6 +233,7 @@ h2:hover {
   margin: 0 auto 20px;
   box-sizing: border-box; /* ensures padding is included */
   overflow-wrap: break-word; /* forces long words to wrap */
+  animation: 12s change-border-color;
 }
 
 #Aviator-Jacket {
