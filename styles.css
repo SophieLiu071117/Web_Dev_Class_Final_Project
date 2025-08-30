@@ -279,7 +279,7 @@ h2:hover {
 .pay-btn {
   animation: bounce 12s;
   border: 5px solid green;
-  text-color: green;
+  color: green;
   font-weight: bold;
 }
 .btn:hover,
