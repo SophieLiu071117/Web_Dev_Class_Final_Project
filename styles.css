@@ -282,7 +282,8 @@ h2:hover {
   text-color: green;
   font-weight: bold;
 }
-.btn:hover {
+.btn:hover,
+.pay-btn:hover {
   background-color: green;
   color: white;
   transform: scale(1.2);
