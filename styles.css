@@ -97,6 +97,83 @@ nav {
     border-color: rgb(221, 106, 221);
   }
 }
+@keyframes bounce {
+  11% {
+    transform: translateY(-10px);
+  }
+  22% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: scale(-10px);
+  }
+  44% {
+    transform: translateY(-10px);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  66% {
+    transform: scale(-10px);
+  }
+  77% {
+    transform: translateY(-10px);
+  }
+  88% {
+    transform: translateY(0);
+  }
+  99% {
+    transform: scale(-10px);
+  }
+}
+
+@keyframes bounce {
+  11% {
+    transform: translateY(-10px);
+  }
+  22% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: scale(-10px);
+  }
+  44% {
+    transform: translateY(-10px);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  66% {
+    transform: scale(-10px);
+  }
+  77% {
+    transform: translateY(-10px);
+  }
+  88% {
+    transform: translateY(0);
+  }
+  99% {
+    transform: scale(-10px);
+  }
+}
+
+@keyframes change-size {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 nav ul {
   list-style: none;
   margin: 0;
@@ -183,7 +260,8 @@ h2:hover {
   animation: change-color 12s infinite, change-border-color 12s infinite;
   border: 5px solid red;
 }
-.btn {
+.btn,
+.pay-btn {
   font-family: Arial, sans-serif;
   font-size: 20px;
   background-color: white;
@@ -197,6 +275,12 @@ h2:hover {
   cursor: url("white-and-pink-hand-pointer.svg"), pointer;
   border: 3px solid black;
   animation: change-color 12s, change-border-color 12s;
+}
+.pay-btn {
+  animation: bounce 12s;
+  border: 5px solid green;
+  text-color: green;
+  font-weight: bold;
 }
 .btn:hover {
   background-color: green;
@@ -301,6 +385,7 @@ h2:hover {
   font-family: Arial, sans-serif;
   width: 300px;
   height: 50px;
+  animation: change-size 12s;
 }
 
 #total:hover {
