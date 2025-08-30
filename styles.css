@@ -57,6 +57,23 @@
     opacity: 1;
   }
 }
+body:not(.first-visit) nav,
+body:not(.first-visit) h1,
+body:not(.first-visit) h2,
+body:not(.first-visit) nav li a button,
+body:not(.first-visit) img,
+body:not(.first-visit) .btn,
+body:not(.first-visit) #Aviator-Jacket,
+body:not(.first-visit) #Red-T-shirt,
+body:not(.first-visit) #Floral-Dress,
+body:not(.first-visit) #Green-Tanktop,
+body:not(.first-visit) .order-summary,
+body:not(.first-visit) .store,
+body:not(.first-visit) .about-me,
+body:not(.first-visit) .thank-you {
+  animation: none !important;
+}
+
 p {
   font-family: Arial, sans-serif;
   font-size: 20px;
@@ -71,7 +88,7 @@ nav {
   border-radius: 10px;
   border: 5px solid red;
   transition: border-color 0.3s;
-  animation: change-border-color 12s;
+  animation: change-border-color 8s;
 }
 
 @keyframes change-border-color {
@@ -198,7 +215,7 @@ nav li a button {
   border-radius: 5px;
   cursor: url("white-and-pink-hand-pointer.svg"), pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-  animation: change-bg-color 12s;
+  animation: change-bg-color 8s;
 }
 
 nav li a button:hover {
@@ -242,10 +259,10 @@ h1 {
   font-family: Arial, sans-serif;
   font-size: 40px;
   text-align: center;
-  animation: change-color 12s;
+  animation: change-color 8s;
 }
 h1:hover {
-  animation: change-color 12s infinite;
+  animation: change-color 8s infinite;
 }
 h2 {
   font-family: Arial, sans-serif;
@@ -254,10 +271,10 @@ h2 {
   background-color: white;
   border: 5px solid black;
   border-radius: 10px;
-  animation: change-color 12s, change-border-color 12s;
+  animation: change-color 8s, change-border-color 8s;
 }
 h2:hover {
-  animation: change-color 12s infinite, change-border-color 12s infinite;
+  animation: change-color 8s infinite, change-border-color 8s infinite;
   border: 5px solid red;
 }
 .btn,
@@ -274,10 +291,10 @@ h2:hover {
   margin-top: 10px;
   cursor: url("white-and-pink-hand-pointer.svg"), pointer;
   border: 3px solid black;
-  animation: change-color 12s, change-border-color 12s;
+  animation: change-color 8s, change-border-color 8s;
 }
 .pay-btn {
-  animation: bounce 12s;
+  animation: bounce 8s;
   border: 5px solid green;
   color: green;
   font-weight: bold;
@@ -318,7 +335,7 @@ h2:hover {
   margin: 0 auto 20px;
   box-sizing: border-box; /* ensures padding is included */
   overflow-wrap: break-word; /* forces long words to wrap */
-  animation: 12s change-border-color;
+  animation: 8s change-border-color;
 }
 
 #Aviator-Jacket {
@@ -334,7 +351,7 @@ h2:hover {
 .store {
   background-color: rgb(255, 204, 204);
   border: 10px groove lightgreen;
-  animation: change-border-color 12s;
+  animation: change-border-color 8s;
 }
 .order-summary {
   font-family: Arial, sans-serif;
@@ -348,7 +365,7 @@ h2:hover {
 .thank-you {
   background-color: rgb(170, 229, 170);
   border: 10px groove lightblue;
-  animation: change-border-color 12s;
+  animation: change-border-color 8s;
 }
 .thank-you {
   font-family: Arial, sans-serif;
@@ -386,7 +403,7 @@ h2:hover {
   font-family: Arial, sans-serif;
   width: 300px;
   height: 50px;
-  animation: change-size 12s;
+  animation: change-size 8s;
 }
 
 #total:hover {
