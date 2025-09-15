@@ -26,71 +26,6 @@
     color: rgb(221, 106, 221);
   }
 }
-@keyframes change-bg-color {
-  14% {
-    background-color: red;
-  }
-  28% {
-    background-color: orange;
-  }
-  42% {
-    background-color: yellow;
-  }
-  56% {
-    background-color: lightgreen;
-  }
-  70% {
-    background-color: lightblue;
-  }
-  84% {
-    background-color: rgb(33, 134, 168);
-  }
-  100% {
-    background-color: rgb(221, 106, 221);
-  }
-}
-@keyframes fade-in-opacity {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-body:not(.first-visit) nav,
-body:not(.first-visit) h1,
-body:not(.first-visit) h2,
-body:not(.first-visit) nav li a button,
-body:not(.first-visit) img,
-body:not(.first-visit) .btn,
-body:not(.first-visit) #Aviator-Jacket,
-body:not(.first-visit) #Red-T-shirt,
-body:not(.first-visit) #Floral-Dress,
-body:not(.first-visit) #Green-Tanktop,
-body:not(.first-visit) .order-summary,
-body:not(.first-visit) .store,
-body:not(.first-visit) .about-me,
-body:not(.first-visit) .thank-you {
-  animation: none !important;
-}
-
-p {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  color: black;
-}
-nav {
-  background-color: rgb(239, 133, 133); /* nav bar color */
-  height: 60px; /* taller than buttons */
-  display: flex;
-  align-items: center; /* vertical centering */
-  padding: 0 20px; /* space on left/right */
-  border-radius: 10px;
-  border: 5px solid red;
-  transition: border-color 0.3s;
-  animation: change-border-color 8s;
-}
-
 @keyframes change-border-color {
   14% {
     border-color: red;
@@ -113,6 +48,28 @@ nav {
   100% {
     border-color: rgb(221, 106, 221);
   }
+}
+@keyframes fade-in-opacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+p {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: black;
+}
+nav {
+  background-color: rgb(255, 204, 204); /* nav bar color */
+  height: 60px; /* taller than buttons */
+  display: flex;
+  align-items: center; /* vertical centering */
+  padding: 0 20px; /* space on left/right */
+  border-radius: 10px;
+  border: 5px solid rgb(170, 229, 170);
 }
 
 @keyframes bounce {
@@ -179,7 +136,7 @@ nav li a {
 nav li a button {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  background-color: red;
+  background-color: rgb(170, 229, 170);
   color: white;
   padding: 8px 16px;
   border: none;
@@ -230,10 +187,9 @@ h1 {
   font-family: Arial, sans-serif;
   font-size: 40px;
   text-align: center;
-  animation: change-color 8s;
 }
 h1:hover {
-  color: red;
+  animation: change-color 8s;
 }
 h2 {
   font-family: Arial, sans-serif;
@@ -242,11 +198,9 @@ h2 {
   background-color: white;
   border: 5px solid black;
   border-radius: 10px;
-  animation: change-color 8s, change-border-color 8s;
 }
 h2:hover {
-  border: 5px solid red;
-  color: red;
+  animation: change-color 8s, change-border-color 8s;
 }
 .btn,
 .pay-btn {
@@ -262,7 +216,6 @@ h2:hover {
   margin-top: 10px;
   cursor: url("white-and-pink-hand-pointer.svg"), pointer;
   border: 3px solid black;
-  animation: change-color 8s, change-border-color 8s;
 }
 .pay-btn {
   animation: bounce 8s;
@@ -292,10 +245,10 @@ h2:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
-#Aviator-Jacket,
-#Red-T-shirt,
-#Floral-Dress,
-#Green-Tanktop {
+.Aviator-Jacket,
+.Red-T-shirt,
+.Floral-Dress,
+.Green-Tanktop {
   min-height: 550px; /* keeps minimum size */
   width: 90%;
   max-width: 80%;
@@ -306,23 +259,14 @@ h2:hover {
   margin: 0 auto 20px;
   box-sizing: border-box; /* ensures padding is included */
   overflow-wrap: break-word; /* forces long words to wrap */
-  animation: 8s change-border-color;
 }
 
-#Aviator-Jacket {
-  background-color: lightgray;
-  border: 10px groove black;
-}
-#Red-T-shirt {
-  background-color: rgb(239, 133, 133);
-  border: 10px groove gold;
-}
-#Floral-Dress,
+.Aviator-Jacket,
+.Red-T-shirt,
 .order-summary,
 .store {
   background-color: rgb(255, 204, 204);
   border: 10px groove lightgreen;
-  animation: change-border-color 8s;
 }
 .order-summary {
   font-family: Arial, sans-serif;
@@ -331,12 +275,18 @@ h2:hover {
   padding: 10px;
   border-radius: 15px;
 }
-#Green-Tanktop,
+.items-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5px; /* vertical spacing */
+  column-gap: 1px; /* horizontal spacing – make middle closer */
+}
+.Green-Tanktop,
+.Floral-Dress,
 .about-me,
 .thank-you {
   background-color: rgb(170, 229, 170);
   border: 10px groove lightblue;
-  animation: change-border-color 8s;
 }
 .thank-you {
   font-family: Arial, sans-serif;
@@ -369,6 +319,49 @@ h2:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltip-pic {
+  visibility: hidden;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  background-color: #555;
+  color: #fff;
+
+  /* Position on the right with spacing */
+  position: absolute;
+  left: 120%; /* space from element */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  /* Smooth fade-in */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Bigger arrow pointing left */
+.tooltip .tooltip-pic::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px; /* distance from tooltip */
+  transform: translateY(-50%);
+  border-width: 10px 10px 10px 0; /* top right bottom left */
+  border-style: solid;
+  border-color: transparent #555 transparent transparent;
+}
+
+.tooltip:hover .tooltip-pic {
+  visibility: visible;
+  opacity: 1;
+}
+
 #total {
   background-color: rgb(135, 225, 32);
   font-family: Arial, sans-serif;
