@@ -1,3 +1,39 @@
+@media screen and (max-width: 768px) {
+  /* Stack the navigation buttons vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav li a {
+    width: 90%; /* Buttons take up most of the screen width */
+    max-width: 300px;
+  }
+
+  /* Make the text boxes (My Store / About Me) wider for small screens */
+  .store-container,
+  .about-container,
+  .info-box {
+    width: 90% !important;
+    margin: 10px auto !important;
+    box-sizing: border-box;
+  }
+
+  /* Adjust header text size so it doesn't wrap awkwardly */
+  h1,
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Ensure the main pink container/nav bar spans the full width */
+  nav {
+    width: 100%;
+    border-radius: 0; /* Looks cleaner on mobile to have flush edges */
+  }
+}
 .note {
   font-family: Arial, sans-serif;
   font-size: 25px;
@@ -119,36 +155,89 @@ nav {
     transform: scale(1);
   }
 }
+/* The pink container bar */
+nav {
+  background-color: rgb(255, 204, 204);
+  padding: 15px 30px; /* Vertical and Horizontal padding */
+  border: 3px solid rgb(170, 229, 170);
+  border-radius: 15px;
+
+  /* Layout */
+  display: flex;
+  justify-content: center; /* Centers the list of buttons */
+  align-items: center; /* Centers them vertically */
+
+  /* Width */
+  width: 95%; /* Makes the bar wide */
+  max-width: 1000px; /* Prevents it from getting too stretched on huge screens */
+  margin: 20px auto; /* Centers the whole bar on the page */
+  box-sizing: border-box; /* Includes padding in the width calculation */
+}
+
+/* The pink container bar */
+nav {
+  background-color: rgb(255, 204, 204);
+  padding: 1.5% 2%; /* Scalable padding based on screen width */
+  border: 0.2rem solid rgb(170, 229, 170);
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 95%;
+  max-width: 1200px; /* Limits extreme stretching on ultra-wide monitors */
+  margin: 1rem auto;
+  box-sizing: border-box;
+}
+
+/* The horizontal list */
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* horizontal layout */
-}
-nav li {
-  margin-right: 15px; /* spacing between buttons */
-}
-nav li a {
+
   display: flex;
-  align-items: center; /* vertical centering of button */
-  text-decoration: none;
-}
-nav li a button {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  background-color: rgb(170, 229, 170);
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: url("white-and-pink-hand-pointer.svg"), pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  animation: change-bg-color 8s;
+  flex-direction: row;
+  gap: 2%; /* Gap scales with the container width */
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
 }
 
-nav li a button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+nav li {
+  flex: 1; /* Each li takes up equal portion of the row */
+  display: flex;
+  justify-content: center;
+  max-width: 300px; /* Prevents buttons from becoming too long */
+}
+
+/* The scalable buttons */
+nav li a {
+  display: inline-block;
+  background-color: rgb(170, 229, 170);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+
+  /* RELATIVE SIZING */
+  width: 100%; /* Fills the flex-basis of the li */
+  padding: 0.8rem 0; /* Vertical padding scales with text size */
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem; /* Scales based on browser root font size */
+  font-weight: bold;
+
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav li a:hover {
+  transform: scale(1.03);
+  background-color: rgb(150, 210, 150);
 }
 .closet {
   font-family: Arial, sans-serif;
@@ -175,6 +264,9 @@ nav li a button:hover {
 img {
   cursor: url("pink-heart.svg"), auto;
   animation: fade-in-opacity 4s forwards;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 body {
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/101/685/small_2x/watercolor-loose-rose-flower-bouquet-with-gold-line-art-background-free-vector.jpg");
@@ -200,7 +292,9 @@ h2 {
   border-radius: 10px;
 }
 h2:hover {
-  animation: change-color 8s, change-border-color 8s;
+  animation:
+    change-color 8s,
+    change-border-color 8s;
 }
 .btn,
 .pay-btn {
@@ -231,7 +325,9 @@ h2:hover {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 .text {
-  font-family: Lucida Console, monospace;
+  font-family:
+    Lucida Console,
+    monospace;
   font-size: 20px;
   color: black;
   margin-top: 10px;
@@ -239,7 +335,9 @@ h2:hover {
 .image-container {
   float: left;
   margin-right: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .image-container:hover {
   transform: scale(1.05);
